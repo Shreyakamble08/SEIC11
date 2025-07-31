@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIEC - Home</title>
+
+    <!-- Google Font: Rubik -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- AOS Library (Include in <head> once if not already added) -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0d9488",
+              secondary: "#14b8a6",
+            },
+            fontFamily: {
+              rubik: ['"Rubik"', "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+          <!-- Logo -->
+          <div class="flex items-center pl-4">
+            <img
+              src="IMAGES/logo.jfif"
+              alt="SIEC Logo"
+              class="w-18 h-16 object-contain"
+            />
+          </div>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden lg:flex items-center space-x-8">
+            <!-- Home -->
+            <a
+              href="index.html"
+              class="text-gray-700 hover:text-primary font-medium"
+            >
+              HOME
+            </a>
+
+            <!-- About -->
+            <div class="relative group">
+              <a
+                href="about.html"
+                class="flex items-center text-gray-700 hover:text-primary font-medium"
+              >
+                ABOUT
+                <svg
+                  class="w-4 h-4 ml-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </a>
+
+               <div
+                class="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg z-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300"
+              >
+                <div class="py-2">
+                  <a
+                    href="about.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    About SIEC
+                  </a>
+                  <a
+                    href="service-assessment.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    About Founders
+                  </a>
+                  <a
+                    href="service-monitoring.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    Achievements
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Services (with Dropdown) -->
+            <div class="relative group">
+              <a
+                href="services.html"
+                class="flex items-center text-gray-700 hover:text-primary font-medium"
+              >
+                SERVICES
+                <svg
+                  class="w-4 h-4 ml-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </a>
+
+              <!-- Dropdown Menu -->
+              <div
+                class="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg z-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300"
+              >
+                <div class="py-2">
+                  <a
+                    href="service-consulting.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    Environmental Consulting
+                  </a>
+                  <a
+                    href="service-assessment.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    Impact Assessment
+                  </a>
+                  <a
+                    href="service-monitoring.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    Environmental Monitoring
+                  </a>
+                  <a
+                    href="service-compliance.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    Compliance Services
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact -->
+            <a
+              href="contact.html"
+              class="text-gray-700 hover:text-primary font-medium"
+            >
+              CONTACT US
+            </a>
+
+            <!-- Download Brochure -->
+            <a
+              href="#"
+              class="bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300 font-medium"
+            >
+              DOWNLOAD BROCHURE
+            </a>
+          </nav>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" class="lg:hidden p-2">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="lg:hidden hidden">
+          <div class="py-4 border-t">
+            <a
+              href="index.html"
+              class="block py-2 text-gray-700 hover:text-primary"
+              >HOME</a
+            >
+            <div class="py-2">
+              <button
+                class="flex items-center justify-between w-full text-gray-700 hover:text-primary"
+                onclick="toggleMobileDropdown('about-dropdown')"
+              >
+                ABOUT
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div id="about-dropdown" class="hidden pl-4 pt-2">
+                <a href="about.html" class="block py-1 text-sm text-gray-600"
+                  >About Us</a
+                >
+              </div>
+            </div>
+            <div class="py-2">
+              <button
+                class="flex items-center justify-between w-full text-gray-700 hover:text-primary"
+                onclick="toggleMobileDropdown('services-dropdown')"
+              >
+                SERVICES
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div id="services-dropdown" class="hidden pl-4 pt-2">
+                <a
+                  href="service-consulting.html"
+                  class="block py-1 text-sm text-gray-600"
+                  >Environmental Consulting</a
+                >
+                <a
+                  href="service-assessment.html"
+                  class="block py-1 text-sm text-gray-600"
+                  >Impact Assessment</a
+                >
+                <a
+                  href="service-monitoring.html"
+                  class="block py-1 text-sm text-gray-600"
+                  >Environmental Monitoring</a
+                >
+                <a
+                  href="service-compliance.html"
+                  class="block py-1 text-sm text-gray-600"
+                  >Compliance Services</a
+                >
+              </div>
+            </div>
+            <a
+              href="contact.html"
+              class="block py-2 text-gray-700 hover:text-primary"
+              >CONTACT US</a
+            >
+            <a href="#" class="block py-2 text-gray-700 hover:text-primary"
+              >DOWNLOAD BROCHURE</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden min-h-[60vh]">
+      <!-- Slides Container -->
+      <div
+        id="slider"
+        class="flex transition-transform duration-700 ease-in-out w-full"
+      >
+        <!-- Slide 1 -->
+        <div
+          class="w-full flex-shrink-0 relative h-[90vh] min-h-[600px] overflow-hidden"
+        >
+          <!-- Video Background -->
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            class="absolute inset-0 w-full h-full object-cover z-0"
+          >
+            <source src="IMAGES/banner1.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+
+          <!-- Dark Overlay -->
+          <div class="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
+
+          <!-- Text Content -->
+          <div
+            class="relative z-20 text-white py-20 flex items-center justify-center h-full px-4"
+          >
+            <div class="text-center max-w-6xl mx-auto">
+              <h1
+                class="text-3xl md:text-5xl font-semibold font-rubik mb-6 drop-shadow-lg"
+              >
+                Environmental Solutions for a Sustainable Future
+              </h1>
+              <p
+                class="text-xl md:text-2xl mb-8 mx-auto drop-shadow-md max-w-3xl"
+              >
+                Leading consulting firm providing services for compliance,
+                assessment, and monitoring.
+              </p>
+              <div class="flex flex-wrap justify-center gap-4">
+                <a
+                  href="services.html"
+                  class="inline-block bg-white text-primary px-6 py-3 md:px-8 md:py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300"
+                >
+                  Our Services
+                </a>
+                <a
+                  href="contact.html"
+                  class="inline-block border-2 border-white text-white px-6 py-3 md:px-8 md:py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition duration-300"
+                >
+                  Get Started
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="w-full flex-shrink-0 relative h-[90vh] min-h-[600px]">
+          <div
+            class="absolute inset-0 bg-cover bg-center"
+            style="background-image: url('images/slide2.jpg')"
+          ></div>
+          <div class="absolute inset-0 bg-black/70"></div>
+          <div
+            class="relative z-10 text-white py-20 flex items-center justify-center h-full px-4"
+          >
+            <div class="text-center max-w-6xl mx-auto">
+              <h1 class="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
+                Eco-Friendly Impact Assessments
+              </h1>
+              <p
+                class="text-xl md:text-2xl mb-8 mx-auto drop-shadow-md max-w-3xl"
+              >
+                Providing expert evaluations to minimize your environmental
+                footprint.
+              </p>
+              <a
+                href="services.html"
+                class="inline-block bg-white text-green-700 px-6 py-3 md:px-8 md:py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="w-full flex-shrink-0 relative h-[90vh] min-h-[600px]">
+          <div
+            class="absolute inset-0 bg-cover bg-center"
+            style="background-image: url('images/slide3.jpg')"
+          ></div>
+          <div class="absolute inset-0 bg-black/70"></div>
+          <div
+            class="relative z-10 text-white py-20 flex items-center justify-center h-full px-4"
+          >
+            <div class="text-center max-w-6xl mx-auto">
+              <h1 class="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
+                Real-Time Environmental Monitoring
+              </h1>
+              <p
+                class="text-xl md:text-2xl mb-8 mx-auto drop-shadow-md max-w-3xl"
+              >
+                Advanced tools and technologies to keep your projects compliant
+                and safe.
+              </p>
+              <a
+                href="services.html"
+                class="inline-block bg-white text-blue-700 px-6 py-3 md:px-8 md:py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300"
+                >Explore Monitoring</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="w-full flex-shrink-0 relative h-[90vh] min-h-[600px]">
+          <div
+            class="absolute inset-0 bg-cover bg-center"
+            style="background-image: url('images/slide4.jpg')"
+          ></div>
+          <div class="absolute inset-0 bg-black/70"></div>
+          <div
+            class="relative z-10 text-white py-20 flex items-center justify-center h-full px-4"
+          >
+            <div class="text-center max-w-6xl mx-auto">
+              <h1 class="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
+                Compliance & Certification Support
+              </h1>
+              <p
+                class="text-xl md:text-2xl mb-8 mx-auto drop-shadow-md max-w-3xl"
+              >
+                Get assistance in meeting regulatory standards efficiently.
+              </p>
+              <a
+                href="contact.html"
+                class="inline-block bg-white text-purple-700 px-6 py-3 md:px-8 md:py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300"
+                >Contact Us</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Dots -->
+      <div
+        class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20"
+      >
+        <button
+          class="dot w-3 h-3 rounded-full bg-white opacity-50 cursor-pointer hover:opacity-100 transition-opacity duration-300"
+          data-index="0"
+          aria-label="Go to slide 1"
+        ></button>
+        <button
+          class="dot w-3 h-3 rounded-full bg-white opacity-50 cursor-pointer hover:opacity-100 transition-opacity duration-300"
+          data-index="1"
+          aria-label="Go to slide 2"
+        ></button>
+        <button
+          class="dot w-3 h-3 rounded-full bg-white opacity-50 cursor-pointer hover:opacity-100 transition-opacity duration-300"
+          data-index="2"
+          aria-label="Go to slide 3"
+        ></button>
+        <button
+          class="dot w-3 h-3 rounded-full bg-white opacity-50 cursor-pointer hover:opacity-100 transition-opacity duration-300"
+          data-index="3"
+          aria-label="Go to slide 4"
+        ></button>
+      </div>
+    </section>
+
+<!-- About Us Section -->
+<section class="py-20 bg-gradient-to-b from-white to-gray-50">
+  <div class="container mx-auto px-4">
+    <!-- Header -->
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 font-rubik">About Our Company</h2>
+      <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+      <p class="text-gray-600 max-w-3xl mx-auto text-lg">
+        Discover the principles and purpose behind our environmental consultancy services.
+      </p>
+    </div>
+
+    <!-- Who We Are -->
+  <div class="flex flex-col lg:flex-row items-center gap-12 mb-20" data-aos="fade-up" data-aos-delay="100">
+  <!-- Image Section -->
+  <div class="lg:w-1/2">
+    <img 
+      src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+      alt="Environmental team planning"
+      class="rounded-xl shadow-lg object-cover h-full max-h-96 w-full">
+  </div>
+
+  <!-- Text Content Section -->
+  <div class="lg:w-1/2">
+    <h3 class="text-2xl font-semibold text-primary mb-4 font-rubik">Who We Are</h3>
+    <p class="text-gray-700 mb-6 text-base sm:text-lg">
+      We are a professional environmental consultancy dedicated to helping industries navigate complex environmental regulations.  
+      <br><br>
+      Our team combines technical expertise and regulatory insight to deliver reliable solutions for environmental compliance, audits, and sustainability goals.  
+      <br><br>
+      Whether it's impact assessments, permit clearances, or ESG advisory—we ensure our clients meet every statutory requirement while supporting long-term ecological responsibility.
+    </p>
+    <div class="flex flex-wrap gap-3">
+      <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">Expert Team</span>
+      <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">Sustainability Driven</span>
+      <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">Compliance Focus</span>
+      <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">ESG Advisory</span>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Mission & Vision Cards -->
+    <div class="grid md:grid-cols-2 gap-8" data-aos="fade-up" data-aos-delay="200">
+      <!-- Mission -->
+      <div class="bg-gradient-to-br from-primary/5 to-white p-8 rounded-xl border-l-4 border-primary shadow-sm">
+        <div class="flex items-center mb-4">
+          <div class="bg-primary p-2 rounded-lg mr-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 font-rubik">Our Mission</h3>
+        </div>
+        <p class="text-gray-700 pl-14 text-base sm:text-lg">
+          To support sustainable development by helping businesses comply with environmental norms and adopt best practices that reduce ecological impact.
+        </p>
+      </div>
+
+      <!-- Vision -->
+      <div class="bg-gradient-to-br from-green-50 to-white p-8 rounded-xl border-l-4 border-green-500 shadow-sm">
+        <div class="flex items-center mb-4">
+          <div class="bg-green-500 p-2 rounded-lg mr-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 font-rubik">Our Vision</h3>
+        </div>
+        <p class="text-gray-700 pl-14 text-base sm:text-lg">
+          To be a trusted partner in environmental transformation for industries, governments, and communities.
+        </p>
+      </div>
+    </div>
+
+     <!-- Highlighted Stats -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 text-center" data-aos="fade-up" data-aos-delay="400">
+      <div>
+        <div class="text-3xl font-bold text-primary">20+</div>
+        <p class="text-gray-600 mt-1 text-sm">Projects Completed</p>
+      </div>
+      <div>
+        <div class="text-3xl font-bold text-primary">15+</div>
+        <p class="text-gray-600 mt-1 text-sm">Industries Served</p>
+      </div>
+      <div>
+        <div class="text-3xl font-bold text-primary">100%</div>
+        <p class="text-gray-600 mt-1 text-sm">Client Satisfaction</p>
+      </div>
+      <div>
+        <div class="text-3xl font-bold text-primary">10+</div>
+        <p class="text-gray-600 mt-1 text-sm">Expert Consultants</p>
+      </div>
+    </div>
+
+    <!-- Our Values -->
+    <div class="mt-20" data-aos="fade-up" data-aos-delay="300">
+      <h3 class="text-2xl font-semibold text-center text-primary mb-8 font-rubik">Our Core Values</h3>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-emerald-500">
+          <h4 class="font-bold text-lg mb-2 text-gray-800">Integrity</h4>
+          <p class="text-gray-600 text-sm">
+            We are transparent, ethical, and committed to honest business practices in all our services.
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-500">
+          <h4 class="font-bold text-lg mb-2 text-gray-800">Sustainability</h4>
+          <p class="text-gray-600 text-sm">
+            Our actions are guided by a strong commitment to ecological balance and long-term impact.
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-yellow-500">
+          <h4 class="font-bold text-lg mb-2 text-gray-800">Innovation</h4>
+          <p class="text-gray-600 text-sm">
+            We continuously adopt new technologies and approaches to deliver better environmental solutions.
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-purple-500">
+          <h4 class="font-bold text-lg mb-2 text-gray-800">Collaboration</h4>
+          <p class="text-gray-600 text-sm">
+            We believe in building lasting relationships with clients, communities, and partners.
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-pink-500">
+          <h4 class="font-bold text-lg mb-2 text-gray-800">Accountability</h4>
+          <p class="text-gray-600 text-sm">
+            We take full responsibility for the quality and outcomes of our work and decisions.
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-red-500">
+          <h4 class="font-bold text-lg mb-2 text-gray-800">Client Focus</h4>
+          <p class="text-gray-600 text-sm">
+            Every service we offer is tailored to meet the specific needs and success of our clients.
+          </p>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="relative py-20 overflow-hidden">
+  <!-- Video Background -->
+  <div class="absolute inset-0 z-0">
+    <video autoplay loop muted playsinline class="w-full h-full object-cover">
+      <source src="IMAGES/servicebg.mp4" type="video/mp4">
+      <!-- Fallback image if video doesn't load -->
+      <img src="https://sienvconsult.com/wp-content/uploads/2023/03/Environmental-Clearance.jpg" alt="Environmental background" class="w-full h-full object-cover">
+    </video>
+    <!-- Dark overlay for better text readability -->
+    <div class="absolute inset-0 bg-black/50"></div>
+  </div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-semibold font-rubik text-white mb-4">Our Services</h2>
+      <p class="text-gray-200 max-w-2xl mx-auto text-lg">
+        Comprehensive environmental solutions tailored to your specific needs
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Environmental Clearance -->
+      <div class="bg-white/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
+        <img src="IMAGES/envclear.jfif" 
+             alt="Environmental Clearance" 
+             class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-3">Environmental Clearance</h3>
+          <p class="text-gray-600 mb-4">
+            Expert guidance through the complete environmental clearance process for your projects.
+          </p>
+          <a href="service-compliance.html" 
+   class="inline-flex items-center px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition group">
+  Know More <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+</a>
+        </div>
+      </div>
+
+      <!-- Environmental Impact Assessment -->
+      <div class="bg-white/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
+        <img src="https://sienvconsult.com/wp-content/uploads/2023/03/Environmental-Impact-Assessment.jpg" 
+             alt="Environmental Impact Assessment" 
+             class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-3">Environmental Impact Assessment</h3>
+          <p class="text-gray-600 mb-4">
+            Comprehensive EIAs to evaluate potential environmental effects of proposed developments.
+          </p>
+          <a href="https://sienvconsult.com/services/environmental-impact-assessment/" 
+             class="inline-flex items-center px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition group">
+            Know More <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Forest Clearance -->
+      <div class="bg-white/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
+        <img src="https://sienvconsult.com/wp-content/uploads/2023/03/Forest-Clearance.jpg" 
+             alt="Forest Clearance" 
+             class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-3">Forest Clearance</h3>
+          <p class="text-gray-600 mb-4">
+            Navigating the complex forest clearance process with regulatory expertise.
+          </p>
+          <a href="https://sienvconsult.com/services/forest-clearance/" 
+             class="inline-flex items-center px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition group">
+            Know More <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- CRZ Clearance -->
+      <div class="bg-white/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
+        <img src="https://sienvconsult.com/wp-content/uploads/2023/03/CRZ-Clearance.jpg" 
+             alt="CRZ Clearance" 
+             class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-3">CRZ Clearance</h3>
+          <p class="text-gray-600 mb-4">
+            Specialized services for Coastal Regulation Zone clearance applications.
+          </p>
+          <a href="https://sienvconsult.com/services/crz-clearance/" 
+             class="inline-flex items-center px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition group">
+            Know More <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Wildlife Clearance -->
+      <div class="bg-white/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
+        <img src="https://sienvconsult.com/wp-content/uploads/2023/03/Wildlife-Clearance.jpg" 
+             alt="Wildlife Clearance" 
+             class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-3">Wildlife Clearance</h3>
+          <p class="text-gray-600 mb-4">
+            Obtaining necessary wildlife clearances while protecting biodiversity.
+          </p>
+          <a href="https://sienvconsult.com/services/wildlife-clearance/" 
+             class="inline-flex items-center px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition group">
+            Know More <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Environmental Management Plan -->
+      <div class="bg-white/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
+        <img src="https://sienvconsult.com/wp-content/uploads/2023/03/Environmental-Management-Plan.jpg" 
+             alt="Environmental Management Plan" 
+             class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-3">Environmental Management Plan</h3>
+          <p class="text-gray-600 mb-4">
+            Developing practical EMPs to mitigate environmental impacts effectively.
+          </p>
+          <a href="https://sienvconsult.com/services/environmental-management-plan/" 
+             class="inline-flex items-center px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition group">
+            Know More <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Features Section -->
+   <section class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <span class="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium tracking-wider mb-4">
+        OUR VALUE PROPOSITION
+      </span>
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        The <span class="text-primary">SIEC Advantage</span>
+      </h2>
+      <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+      <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+        We combine deep regulatory knowledge with practical solutions to deliver exceptional results
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Expert Consultation -->
+      <div class="relative group overflow-hidden rounded-2xl shadow-lg h-full">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-white z-0"></div>
+        <div class="relative z-10 p-8 h-full flex flex-col">
+          <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-primary/20">
+            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Expert Consultation</h3>
+          <p class="text-gray-600 mb-6">
+            Our team of former regulators and industry specialists brings 15+ years of hands-on experience to every project.
+          </p>
+          <div class="mt-auto pt-4 border-t border-gray-200/50">
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mr-3 mt-0.5">
+                  <svg class="w-3 h-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </span>
+                <span>Sector-specific expertise</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mr-3 mt-0.5">
+                  <svg class="w-3 h-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </span>
+                <span>Regulatory insight</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fast Solutions -->
+      <div class="relative group overflow-hidden rounded-2xl shadow-lg h-full">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-white z-0"></div>
+        <div class="relative z-10 p-8 h-full flex flex-col">
+          <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-blue-200">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Fast Solutions</h3>
+          <p class="text-gray-600 mb-6">
+            Our streamlined processes ensure 90% of projects meet their deadlines without compromising quality.
+          </p>
+          <div class="mt-auto pt-4 border-t border-gray-200/50">
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mr-3 mt-0.5">
+                  <svg class="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </span>
+                <span>Dedicated project managers</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mr-3 mt-0.5">
+                  <svg class="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </span>
+                <span>Real-time progress tracking</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cost Effective -->
+      <div class="relative group overflow-hidden rounded-2xl shadow-lg h-full">
+        <div class="absolute inset-0 bg-gradient-to-br from-green-50 to-white z-0"></div>
+        <div class="relative z-10 p-8 h-full flex flex-col">
+          <div class="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-green-200">
+            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Cost Effective</h3>
+          <p class="text-gray-600 mb-6">
+            Clients typically save 30-40% compared to maintaining in-house compliance teams.
+          </p>
+          <div class="mt-auto pt-4 border-t border-gray-200/50">
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-3 mt-0.5">
+                  <svg class="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </span>
+                <span>Transparent pricing</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-3 mt-0.5">
+                  <svg class="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </span>
+                <span>No hidden fees</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Footer -->
+   <footer class="bg-gray-800 text-gray-200 pt-12 pb-6">
+  <div class="container mx-auto px-8 grid md:grid-cols-4 gap-12">
+    
+    <!-- Company Info -->
+    <div>
+      <h3 class="text-xl font-semibold mb-5 text-white">SIEC</h3>
+      <p class="text-sm leading-relaxed">
+        Sustainable Innovative Environmental Consultants.  
+        We provide expert guidance in environmental compliance and sustainability solutions.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="ml-6">
+  <h4 class="text-lg font-semibold mb-3 text-white">Quick Links</h4>
+  <ul class="space-y-3 text-sm">
+    <li><a href="/" class="hover:text-primary">Home</a></li>
+    <li><a href="/about" class="hover:text-primary">About Us</a></li>
+    <li><a href="/services" class="hover:text-primary">Services</a></li>
+    <li><a href="/contact" class="hover:text-primary">Contact</a></li>
+  </ul>
+</div>
+
+
+    <!-- Services -->
+    <div>
+      <h4 class="text-lg font-semibold mb-3 text-white">Our Services</h4>
+      <ul class="space-y-3 text-sm">
+        <li><a href="/services/environmental-clearance" class="hover:text-primary">Environmental Clearance</a></li>
+        <li><a href="/services/compliance" class="hover:text-primary">Compliance & Monitoring</a></li>
+        <li><a href="/services/water-testing" class="hover:text-primary">Water & Wastewater Testing</a></li>
+        <li><a href="/services/air-monitoring" class="hover:text-primary">Air Quality Monitoring</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="ml-4">
+  <h4 class="text-lg font-semibold mb-3 text-white">Contact Us</h4>
+  <div class="text-sm space-y-2 text-white">
+    <p class="flex items-start gap-2">
+      <svg class="w-5 h-5 mt-1 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+      </svg>
+      Pune, Maharashtra, India
+    </p>
+    <p class="flex items-center gap-2">
+      <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1.003 1.003 0 011.05-.24 11.72 11.72 0 003.68.59 1 1 0 011 1V20a1 1 0 01-1 1C10.29 21 3 13.71 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.26.2 2.49.59 3.68a1 1 0 01-.24 1.05l-2.23 2.06z"/>
+      </svg>
+      <a href="tel:+919876543210" class="hover:text-primary">+91 98765 43210</a>
+    </p>
+    <p class="flex items-center gap-2">
+      <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+      <a href="mailto:info@siec.com" class="hover:text-primary">info@siec.com</a>
+    </p>
+  </div>
+
+  <!-- Social Icons -->
+  <div class="flex space-x-6 mt-4 text-white">
+    <!-- Twitter -->
+    <a href="#" class="hover:text-primary">
+      <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M22.23 5.92a8.4 8.4 0 01-2.36.65 4.12 4.12 0 001.81-2.27 8.28 8.28 0 01-2.61 1 4.1 4.1 0 00-7 3.74 11.65 11.65 0 01-8.46-4.3 4.1 4.1 0 001.27 5.47A4.07 4.07 0 012.8 9v.05a4.1 4.1 0 003.29 4 4.1 4.1 0 01-1.85.07 4.1 4.1 0 003.83 2.85A8.23 8.23 0 012 18.57a11.61 11.61 0 006.29 1.84c7.55 0 11.68-6.26 11.68-11.68v-.53A8.36 8.36 0 0022.23 5.92z"/>
+      </svg>
+    </a>
+    <!-- Facebook -->
+    <a href="#" class="hover:text-primary">
+      <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M22.675 0H1.325C.593 0 0 .593 0 1.326v21.348C0 23.408.593 24 1.325 24H12.81v-9.294H9.692V11.31h3.118V8.41c0-3.097 1.894-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.794.715-1.794 1.763v2.31h3.587l-.467 3.396h-3.12V24h6.116c.73 0 1.323-.592 1.323-1.326V1.326C24 .593 23.408 0 22.675 0z"/>
+      </svg>
+    </a>
+    <!-- Instagram -->
+    <a href="#" class="hover:text-primary">
+      <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm4.25 3a5.25 5.25 0 110 10.5 5.25 5.25 0 010-10.5zm0 1.5a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5zm4.88-.38a.88.88 0 11-1.76 0 .88.88 0 011.76 0z"/>
+      </svg>
+    </a>
+  </div>
+</div>
+  </div>
+
+  <!-- Bottom -->
+  <div class="border-t border-gray-700 mt-8 pt-4 text-center text-sm text-gray-400">
+    © 2025 SIEC. All rights reserved.
+  </div>
+</footer>
+
+
+    <script src="script.js"></script>
+  </body>
+</html>

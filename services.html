@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIEC - Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0d9488',
+                        secondary: '#14b8a6'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+   <header class="bg-white shadow-md sticky top-0 z-50">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+          <!-- Logo -->
+          <div class="flex items-center pl-4">
+            <img
+              src="IMAGES/logo.jfif"
+              alt="SIEC Logo"
+              class="w-18 h-16 object-contain"
+            />
+          </div>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden lg:flex items-center space-x-8">
+            <!-- Home -->
+            <a
+              href="index.html"
+              class="text-gray-700 hover:text-primary font-medium"
+            >
+              HOME
+            </a>
+
+            <!-- About -->
+            <div class="relative group">
+              <a
+                href="about.html"
+                class="flex items-center text-gray-700 hover:text-primary font-medium"
+              >
+                ABOUT
+                <svg
+                  class="w-4 h-4 ml-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </a>
+
+               <div
+                class="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg z-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300"
+              >
+                <div class="py-2">
+                  <a
+                    href="about.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    About SIEC
+                  </a>
+                  <a
+                    href="service-assessment.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    About Founders
+                  </a>
+                  <a
+                    href="service-monitoring.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    Achievements
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Services (with Dropdown) -->
+            <div class="relative group">
+              <a
+                href="services.html"
+                class="flex items-center text-gray-700 hover:text-primary font-medium"
+              >
+                SERVICES
+                <svg
+                  class="w-4 h-4 ml-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </a>
+
+              <!-- Dropdown Menu -->
+              <div
+                class="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg z-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300"
+              >
+                <div class="py-2">
+                  <a
+                    href="service-consulting.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    Environmental Consulting
+                  </a>
+                  <a
+                    href="service-assessment.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    Impact Assessment
+                  </a>
+                  <a
+                    href="service-monitoring.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    Environmental Monitoring
+                  </a>
+                  <a
+                    href="service-compliance.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    Compliance Services
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact -->
+            <a
+              href="contact.html"
+              class="text-gray-700 hover:text-primary font-medium"
+            >
+              CONTACT US
+            </a>
+
+            <!-- Download Brochure -->
+            <a
+              href="#"
+              class="bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300 font-medium"
+            >
+              DOWNLOAD BROCHURE
+            </a>
+          </nav>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" class="lg:hidden p-2">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="lg:hidden hidden">
+          <div class="py-4 border-t">
+            <a
+              href="index.html"
+              class="block py-2 text-gray-700 hover:text-primary"
+              >HOME</a
+            >
+            <div class="py-2">
+              <button
+                class="flex items-center justify-between w-full text-gray-700 hover:text-primary"
+                onclick="toggleMobileDropdown('about-dropdown')"
+              >
+                ABOUT
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div id="about-dropdown" class="hidden pl-4 pt-2">
+                <a href="about.html" class="block py-1 text-sm text-gray-600"
+                  >About Us</a
+                >
+              </div>
+            </div>
+            <div class="py-2">
+              <button
+                class="flex items-center justify-between w-full text-gray-700 hover:text-primary"
+                onclick="toggleMobileDropdown('services-dropdown')"
+              >
+                SERVICES
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div id="services-dropdown" class="hidden pl-4 pt-2">
+                <a
+                  href="service-consulting.html"
+                  class="block py-1 text-sm text-gray-600"
+                  >Environmental Consulting</a
+                >
+                <a
+                  href="service-assessment.html"
+                  class="block py-1 text-sm text-gray-600"
+                  >Impact Assessment</a
+                >
+                <a
+                  href="service-monitoring.html"
+                  class="block py-1 text-sm text-gray-600"
+                  >Environmental Monitoring</a
+                >
+                <a
+                  href="service-compliance.html"
+                  class="block py-1 text-sm text-gray-600"
+                  >Compliance Services</a
+                >
+              </div>
+            </div>
+            <a
+              href="contact.html"
+              class="block py-2 text-gray-700 hover:text-primary"
+              >CONTACT US</a
+            >
+            <a href="#" class="block py-2 text-gray-700 hover:text-primary"
+              >DOWNLOAD BROCHURE</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="bg-primary text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Services</h1>
+            <p class="text-xl">Comprehensive environmental solutions for your business</p>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <!-- Environmental Consulting -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                    <div class="h-48 bg-gradient-to-r from-primary to-secondary"></div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Environmental Consulting</h3>
+                        <p class="text-gray-600 mb-4">
+                            Expert guidance on environmental regulations, sustainability strategies, and best practices for your organization.
+                        </p>
+                        <ul class="text-sm text-gray-600 mb-4 space-y-1">
+                            <li>• Regulatory compliance assessment</li>
+                            <li>• Sustainability planning</li>
+                            <li>• Environmental management systems</li>
+                            <li>• Risk assessment and mitigation</li>
+                        </ul>
+                        <a href="service-consulting.html" class="inline-block bg-primary text-white px-6 py-2 rounded hover:bg-secondary transition duration-300">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Impact Assessment -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                    <div class="h-48 bg-gradient-to-r from-secondary to-primary"></div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Environmental Impact Assessment</h3>
+                        <p class="text-gray-600 mb-4">
+                            Comprehensive evaluation of potential environmental impacts from proposed projects and developments.
+                        </p>
+                        <ul class="text-sm text-gray-600 mb-4 space-y-1">
+                            <li>• EIA report preparation</li>
+                            <li>• Baseline studies</li>
+                            <li>• Impact prediction and evaluation</li>
+                            <li>• Mitigation measures design</li>
+                        </ul>
+                        <a href="service-assessment.html" class="inline-block bg-primary text-white px-6 py-2 rounded hover:bg-secondary transition duration-300">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Environmental Monitoring -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                    <div class="h-48 bg-gradient-to-r from-primary to-secondary"></div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Environmental Monitoring</h3>
+                        <p class="text-gray-600 mb-4">
+                            Continuous monitoring and assessment of environmental parameters to ensure compliance and track changes.
+                        </p>
+                        <ul class="text-sm text-gray-600 mb-4 space-y-1">
+                            <li>• Air quality monitoring</li>
+                            <li>• Water quality assessment</li>
+                            <li>• Soil contamination testing</li>
+                            <li>• Noise level monitoring</li>
+                        </ul>
+                        <a href="service-monitoring.html" class="inline-block bg-primary text-white px-6 py-2 rounded hover:bg-secondary transition duration-300">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Compliance Services -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                    <div class="h-48 bg-gradient-to-r from-secondary to-primary"></div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Compliance Services</h3>
+                        <p class="text-gray-600 mb-4">
+                            Ensure your organization meets all environmental regulations and standards with our compliance services.
+                        </p>
+                        <ul class="text-sm text-gray-600 mb-4 space-y-1">
+                            <li>• Regulatory compliance audits</li>
+                            <li>• Permit applications and renewals</li>
+                            <li>• Compliance training programs</li>
+                            <li>• Documentation and reporting</li>
+                        </ul>
+                        <a href="service-compliance.html" class="inline-block bg-primary text-white px-6 py-2 rounded hover:bg-secondary transition duration-300">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Ready to Get Started?</h2>
+            <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+                Contact us today to discuss your environmental consulting needs and discover how we can help your organization achieve its sustainability goals.
+            </p>
+            <a href="contact.html" class="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-secondary transition duration-300">Contact Us Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+   <footer class="bg-gray-800 text-gray-200 pt-12 pb-6">
+  <div class="container mx-auto px-8 grid md:grid-cols-4 gap-12">
+    
+    <!-- Company Info -->
+    <div>
+      <h3 class="text-xl font-semibold mb-5 text-white">SIEC</h3>
+      <p class="text-sm leading-relaxed">
+        Sustainable Innovative Environmental Consultants.  
+        We provide expert guidance in environmental compliance and sustainability solutions.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="ml-6">
+  <h4 class="text-lg font-semibold mb-3 text-white">Quick Links</h4>
+  <ul class="space-y-3 text-sm">
+    <li><a href="/" class="hover:text-primary">Home</a></li>
+    <li><a href="/about" class="hover:text-primary">About Us</a></li>
+    <li><a href="/services" class="hover:text-primary">Services</a></li>
+    <li><a href="/contact" class="hover:text-primary">Contact</a></li>
+  </ul>
+</div>
+
+
+    <!-- Services -->
+    <div>
+      <h4 class="text-lg font-semibold mb-3 text-white">Our Services</h4>
+      <ul class="space-y-3 text-sm">
+        <li><a href="/services/environmental-clearance" class="hover:text-primary">Environmental Clearance</a></li>
+        <li><a href="/services/compliance" class="hover:text-primary">Compliance & Monitoring</a></li>
+        <li><a href="/services/water-testing" class="hover:text-primary">Water & Wastewater Testing</a></li>
+        <li><a href="/services/air-monitoring" class="hover:text-primary">Air Quality Monitoring</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="ml-4">
+  <h4 class="text-lg font-semibold mb-3 text-white">Contact Us</h4>
+  <div class="text-sm space-y-2 text-white">
+    <p class="flex items-start gap-2">
+      <svg class="w-5 h-5 mt-1 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+      </svg>
+      Pune, Maharashtra, India
+    </p>
+    <p class="flex items-center gap-2">
+      <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1.003 1.003 0 011.05-.24 11.72 11.72 0 003.68.59 1 1 0 011 1V20a1 1 0 01-1 1C10.29 21 3 13.71 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.26.2 2.49.59 3.68a1 1 0 01-.24 1.05l-2.23 2.06z"/>
+      </svg>
+      <a href="tel:+919876543210" class="hover:text-primary">+91 98765 43210</a>
+    </p>
+    <p class="flex items-center gap-2">
+      <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+      <a href="mailto:info@siec.com" class="hover:text-primary">info@siec.com</a>
+    </p>
+  </div>
+
+  <!-- Social Icons -->
+  <div class="flex space-x-6 mt-4 text-white">
+    <!-- Twitter -->
+    <a href="#" class="hover:text-primary">
+      <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M22.23 5.92a8.4 8.4 0 01-2.36.65 4.12 4.12 0 001.81-2.27 8.28 8.28 0 01-2.61 1 4.1 4.1 0 00-7 3.74 11.65 11.65 0 01-8.46-4.3 4.1 4.1 0 001.27 5.47A4.07 4.07 0 012.8 9v.05a4.1 4.1 0 003.29 4 4.1 4.1 0 01-1.85.07 4.1 4.1 0 003.83 2.85A8.23 8.23 0 012 18.57a11.61 11.61 0 006.29 1.84c7.55 0 11.68-6.26 11.68-11.68v-.53A8.36 8.36 0 0022.23 5.92z"/>
+      </svg>
+    </a>
+    <!-- Facebook -->
+    <a href="#" class="hover:text-primary">
+      <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M22.675 0H1.325C.593 0 0 .593 0 1.326v21.348C0 23.408.593 24 1.325 24H12.81v-9.294H9.692V11.31h3.118V8.41c0-3.097 1.894-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.794.715-1.794 1.763v2.31h3.587l-.467 3.396h-3.12V24h6.116c.73 0 1.323-.592 1.323-1.326V1.326C24 .593 23.408 0 22.675 0z"/>
+      </svg>
+    </a>
+    <!-- Instagram -->
+    <a href="#" class="hover:text-primary">
+      <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm4.25 3a5.25 5.25 0 110 10.5 5.25 5.25 0 010-10.5zm0 1.5a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5zm4.88-.38a.88.88 0 11-1.76 0 .88.88 0 011.76 0z"/>
+      </svg>
+    </a>
+  </div>
+</div>
+  </div>
+
+  <!-- Bottom -->
+  <div class="border-t border-gray-700 mt-8 pt-4 text-center text-sm text-gray-400">
+    © 2025 SIEC. All rights reserved.
+  </div>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
